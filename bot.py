@@ -5,12 +5,14 @@ from flask import Flask
 
 server = Flask(__name__)
 
-@server.route("/")
+
 updater = Updater(token='895277021:AAEF6pBhDJwe4-pajLq_dym0CrlY8HlCfvU') # Токен API к Telegram
 dispatcher = updater.dispatcher
 # Обработка команд
+@server.route("/")
 def startCommand(bot, update):
     bot.send_message(chat_id=update.message.chat_id, text='Привет, давай пообщаемся?')
+    return "data"
 def textMessage(bot, update):
     request = apiai.ApiAI('7e7dba808f2a40779eb16763af566ce4').text_request() # Токен API к Dialogflow
     request.lang = 'ru' # На каком языке будет послан запрос
