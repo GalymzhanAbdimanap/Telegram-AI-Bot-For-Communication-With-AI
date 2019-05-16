@@ -1,5 +1,9 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import apiai, json
+from flask import Flask
+
+
+server = Flask(__name__)
 updater = Updater(token='895277021:AAEF6pBhDJwe4-pajLq_dym0CrlY8HlCfvU') # Токен API к Telegram
 dispatcher = updater.dispatcher
 # Обработка команд
@@ -27,3 +31,6 @@ dispatcher.add_handler(text_message_handler)
 updater.start_polling(clean=True)
 # Останавливаем бота, если были нажаты Ctrl + C
 updater.idle()
+
+if __name__="__main__":
+    server.run(host="0.0.0.0", port=5000)
