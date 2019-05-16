@@ -36,5 +36,5 @@ updater.start_polling(clean=True)
 # Останавливаем бота, если были нажаты Ctrl + C
 updater.idle()
 
-if __name__="__main__":
+if __name__=="__main__":
     server.run(host="0.0.0.0", port=5000)
