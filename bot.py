@@ -4,6 +4,8 @@ from flask import Flask
 
 
 server = Flask(__name__)
+
+@server.route("/")
 updater = Updater(token='895277021:AAEF6pBhDJwe4-pajLq_dym0CrlY8HlCfvU') # Токен API к Telegram
 dispatcher = updater.dispatcher
 # Обработка команд
