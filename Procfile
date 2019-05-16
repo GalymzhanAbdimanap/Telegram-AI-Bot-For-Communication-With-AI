@@ -1,1 +1,1 @@
-web: python3 morse.py
+web: python3 bot.py
